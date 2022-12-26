@@ -1,4 +1,4 @@
 # tic-tac-toe
 
 
-[Live Demo](https://eyuhar.github.io/pixel-sketch/)
+[Live Demo](https://eyuhar.github.io/tic-tac-toe/)
