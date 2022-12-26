@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script src="./script.js" defer></script>
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <header>
+        <h1>Tic Tac Toe</h1>
+    </header>
+    <main>
+        <div class="rounded-border" id="message"></div>
+        <div id="game-board">
+            <div class="cell not-selected" data-index="0"></div>
+            <div class="cell not-selected" data-index="1"></div>
+            <div class="cell not-selected" data-index="2"></div>
+            <div class="cell not-selected" data-index="3"></div>
+            <div class="cell not-selected" data-index="4"></div>
+            <div class="cell not-selected" data-index="5"></div>
+            <div class="cell not-selected" data-index="6"></div>
+            <div class="cell not-selected" data-index="7"></div>
+            <div class="cell not-selected" data-index="8"></div>
+        </div>
+        <div id="result">
+            <div class="rounded-border" id="player-wins"></div>
+            <div class="rounded-border" id="bot-wins"></div>
+        </div>
+        <div class="rounded-border restart">Restart</div>
+    </main>
+</body>
+</html>
