@@ -73,6 +73,14 @@ const displayController = (() => {
         });
     }
 
+    function addBLToUnselected(){
+        cells.forEach(element => {
+            if (element.classList.contains("not-selected")) {
+                element.addEventListener("click", play);
+            }
+        });
+    }
+
     //remove EventListener after a cell got marked
     function setMarked(cell){
         const markedCell = Array.from(cells).find(element => element.dataset.index === cell.toString());
@@ -133,7 +141,7 @@ const displayController = (() => {
     }
 
     return {updateBoard, showMessage, setMarked, displayScore, removeBoardListeners, 
-        highlightBotChoice, unhighlightBotChoice, highlightWinCombination};
+        highlightBotChoice, unhighlightBotChoice, highlightWinCombination, addBLToUnselected};
 })();
 
 const gameController = (() => {
@@ -176,6 +184,7 @@ const gameController = (() => {
             //if (round % 2) === 1 = bots turn
             //get indices of unmarked fields and choose one randomly
             if ((round % 2) === 1) {
+                displayController.removeBoardListeners();
                 setTimeout(() => {
                     const unsetFields = gameBoard.getUnsetFields();
                     const chosenField = unsetFields[Math.floor(Math.random() * unsetFields.length)];
@@ -183,6 +192,7 @@ const gameController = (() => {
                     setTimeout(() => {
                         gameController.play(chosenField);
                         displayController.unhighlightBotChoice(chosenField);
+                        displayController.addBLToUnselected();
                     }, 350);
                 }, 500);
             }
